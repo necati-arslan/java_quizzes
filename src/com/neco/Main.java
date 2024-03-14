@@ -4,23 +4,25 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
-        scan.nextLine(); // Consume the newline character
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
 
-        double d = scan.nextDouble();
-        scan.nextLine(); // Consume the newline character
+            String result="";
+            int bTotal =0;
+            for(int j=0; j<n; j++ ) {
+                bTotal += (int)Math.pow(2, j)*b;
+                int total=a+ bTotal;
+                result += total +" ";
+            }
+            System.out.println(result);
 
-        String s = scan.nextLine();
+        }
+        in.close();
 
-        scan.close();
-
-
-        // Write your code here.
-
-        System.out.println("String: " + s);
-        System.out.println("Double: " + d);
-        System.out.println("Int: " + i);
     }
 }
+//https://www.hackerrank.com/challenges/java-loops/problem?isFullScreen=true
