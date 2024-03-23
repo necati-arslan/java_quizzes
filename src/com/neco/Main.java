@@ -27,7 +27,7 @@ public class Main {
             if (input.equals("Insert")){
                 int first=in.nextInt();
                 int sec=in.nextInt();
-                myList.add(sec);
+                myList.add(first,sec);
             }
 
             if(input.equals("Delete")){
