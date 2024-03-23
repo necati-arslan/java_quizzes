@@ -11,29 +11,38 @@ public class Main {
 
 
         Scanner in = new Scanner(System.in);
-        List<List<Integer>> lines = new ArrayList<List<Integer>>();
         int n = in.nextInt();
-        for(int i=0; i<n ;i++){
-            List<Integer> line = new ArrayList<Integer>();
-            int d = in.nextInt();
-            for(int j=0; j<d;j++){
-                line.add(in.nextInt());
-            }
-            lines.add(line);
+
+        List<Integer> myList = new ArrayList<>();
+
+        for (int i=0;i<n;i++){
+            int ElementinL=in.nextInt();
+            myList.add(ElementinL);
         }
+
         int q = in.nextInt();
-        for (int i = 0; i < q; i++) {
+        for(int j=0;j<q;j++){
+            String input = in.next();
 
-            int x = in.nextInt();
-            int y = in.nextInt();
-            if (y > lines.get(x - 1).size()) {
-                System.out.println("ERROR!");
-            } else {
-                System.out.println(lines.get(x - 1).get(y - 1));
+            if (input.equals("Insert")){
+                int first=in.nextInt();
+                int sec=in.nextInt();
+                myList.add(sec);
+            }
+
+            if(input.equals("Delete")){
+                int indexDelete=in.nextInt();
+                myList.remove(indexDelete);
             }
 
         }
-        in.close();
+
+        for(int e:myList){
+            System.out.print(e + " ");
+
+        }
+
+
 
 
 
